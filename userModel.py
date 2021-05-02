@@ -27,7 +27,7 @@ class users:
         dbmngr.connectDB()
         conexion = dbmngr.conn
         cursor = dbmngr.conn.cursor()
-        cursor.execute("Insert into usersTable (id, password, nombre, apellido, perfil, area) values (?,?,?,?,?,?)",
+        cursor.execute("Insert into users (id, password, nombre, apellido, perfil, area) values (?,?,?,?,?,?)",
                         (self.Id, self.Pass, self.Nombre, self.Apellido, self.Perfil, self.Area))
 
         conexion.commit()
