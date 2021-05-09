@@ -16,7 +16,7 @@ class users:
         self.Perfil = ""
         self.Area = ""
         
-    def createUsers(self):
+    def createUser(self):
         self.Id = int(input("Ingrese el ID: "))
         self.Pass = input("Ingrese el Pass: ")
         self.Nombre = input("Ingrese el Nombre: ")
@@ -27,7 +27,7 @@ class users:
         dbmngr.connectDB()
         conexion = dbmngr.conn
         cursor = conexion.cursor()
-        cursor.execute("INSERT INTO Users (id, password, nombre, apellidos, perfil, area) values (?,?,?,?,?,?)",
+        cursor.execute("Insert into UsersTable (id, password, nombre, apellidos, perfil, area) values (?,?,?,?,?,?)",
                         (self.Id, self.Pass, self.Nombre, self.Apellido, self.Perfil, self.Area))
 
         conexion.commit()
@@ -38,7 +38,7 @@ class users:
 
 def main():
     contacto = users()
-    contacto.createUsers()
+    contacto.createUser()
 
 if __name__ == '__main__':
     
