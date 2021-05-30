@@ -27,7 +27,7 @@ class users:
         dbmngr.connectDB()
         conexion = dbmngr.conn
         cursor = conexion.cursor()
-        cursor.execute("Insert into UsersTable (id, password, nombre, apellidos, perfil, area) values (?,?,?,?,?,?)",
+        cursor.execute("Insert into Users (id, password, nombre, apellidos, perfil, area) values (?,?,?,?,?,?)",
                         (self.Id, self.Pass, self.Nombre, self.Apellido, self.Perfil, self.Area))
 
         conexion.commit()
@@ -37,8 +37,8 @@ class users:
         print(f'comunicacion realizada, user {self.id} creado excelente')
 
 def main():
-    contacto = users()
-    contacto.createUser()
+    contact = users()
+    contact.createUser()
 
 if __name__ == '__main__':
     
